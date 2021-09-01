@@ -1,0 +1,27 @@
+{
+  "pedidosrapiditosApp": {
+    "itemCarrito": {
+      "home": {
+        "title": "Item Carritos",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Item Carrito",
+        "createOrEditLabel": "Crear o editar Item Carrito",
+        "notFound": "Ningún Item Carritos encontrado"
+      },
+      "created": "Un nuevo Item Carrito ha sido creado con el identificador {{ param }}",
+      "updated": "Un Item Carrito ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Item Carrito ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Item Carrito {{ id }}?"
+      },
+      "detail": {
+        "title": "Item Carrito"
+      },
+      "id": "ID",
+      "cantidad": "Cantidad",
+      "precioTotal": "Precio Total",
+      "producto": "Producto",
+      "carrito": "Carrito"
+    }
+  }
+}

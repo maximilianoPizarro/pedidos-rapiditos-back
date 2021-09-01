@@ -1,0 +1,10 @@
+{
+  "pedidosrapiditosApp": {
+    "MetodoDePago": {
+      "null": "",
+      "EFECTIVO": "efectivo",
+      "CUPON": "cupon",
+      "TARJETA": "tarjeta"
+    }
+  }
+}

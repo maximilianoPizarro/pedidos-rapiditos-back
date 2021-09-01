@@ -1,0 +1,10 @@
+{
+  "pedidosrapiditosApp": {
+    "RolUsuario": {
+      "null": "",
+      "CLIENTE": "CLIENTE",
+      "RESTAURANTE": "RESTAURANTE",
+      "REPARTIDOR": "REPARTIDOR"
+    }
+  }
+}

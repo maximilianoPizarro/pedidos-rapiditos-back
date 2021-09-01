@@ -1,0 +1,11 @@
+id;nombre;descripcion;precio;medida;image;image_content_type;activo;restaurante_id;producto_categoria_id
+1;actitud;Dinánmico;81998;M;../fake-data/blob/hipster.png;image/png;false;1;1
+2;Buckinghamshire Morado;online;98594;XXL;../fake-data/blob/hipster.png;image/png;false;2;2
+3;Rústico SDD;deposit;33378;XL;../fake-data/blob/hipster.png;image/png;false;3;3
+4;Dinánmico Camino Genérico;XSS virtual;374;M;../fake-data/blob/hipster.png;image/png;true;4;4
+5;Gabón Guadalupe;Berkshire;76382;XL;../fake-data/blob/hipster.png;image/png;true;5;5
+6;Azul Profundo didactica;Gris Innovador;28242;XL;../fake-data/blob/hipster.png;image/png;true;6;6
+7;synthesizing Extrarradio;innovative Seguro;44740;XXL;../fake-data/blob/hipster.png;image/png;true;7;7
+8;metódica real-time;de;28148;M;../fake-data/blob/hipster.png;image/png;false;8;8
+9;Deportes quantifying state;Estratega;70490;XXL;../fake-data/blob/hipster.png;image/png;false;9;9
+10;cross-platform;world-class Gorro optimize;68489;XL;../fake-data/blob/hipster.png;image/png;true;10;10

@@ -1,0 +1,30 @@
+{
+  "pedidosrapiditosApp": {
+    "restaurante": {
+      "home": {
+        "title": "Restaurantes",
+        "refreshListLabel": "Refrescar lista",
+        "createLabel": "Crear nuevo Restaurante",
+        "createOrEditLabel": "Crear o editar Restaurante",
+        "notFound": "Ningún Restaurantes encontrado"
+      },
+      "created": "Un nuevo Restaurante ha sido creado con el identificador {{ param }}",
+      "updated": "Un Restaurante ha sido actualizado con el identificador {{ param }}",
+      "deleted": "Un Restaurante ha sido eliminado con el identificador {{ param }}",
+      "delete": {
+        "question": "¿Seguro que quiere eliminar Restaurante {{ id }}?"
+      },
+      "detail": {
+        "title": "Restaurante"
+      },
+      "id": "ID",
+      "nombre": "Nombre",
+      "descripcion": "Descripcion",
+      "activo": "Activo",
+      "calificacion": "Calificacion",
+      "latitud": "Latitud",
+      "longitud": "Longitud",
+      "categoria": "Categoria"
+    }
+  }
+}

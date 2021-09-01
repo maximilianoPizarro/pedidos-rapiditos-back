@@ -1,0 +1,109 @@
+application {
+  config {
+  	applicationType monolith
+    baseName pedidosrapiditos
+    packageName com.pedidosrapiditos.app
+    authenticationType jwt
+    prodDatabaseType postgresql
+    databaseType sql
+    devDatabaseType h2Memory
+    buildTool maven
+    clientFramework vue
+    clientTheme morph
+    clientThemeVariant dark
+    enableTranslation true
+    nativeLanguage es
+    languages [en]
+  }
+  entities *
+}
+
+
+/** Producto sold by the Online store */
+entity Producto {
+    nombre String required
+    descripcion String
+    precio BigDecimal required min(0)
+    medida Medida required
+    image ImageBlob
+    activo Boolean
+}
+
+entity Restaurante {
+	nombre String required
+    descripcion String
+    activo Boolean
+    calificacion Float min(0) max(5)
+    latitud BigDecimal max(90) min(-90)
+    longitud BigDecimal max(180) min(-180)
+}
+
+entity RestauranteCategoria {
+	nombre String required
+    description String
+}
+
+enum Medida {
+    S, M, L, XL, XXL
+}
+
+entity ProductoCategoria {
+    nombre String required
+    description String
+}
+
+entity Usuario {
+	username String required
+    password String required
+    rol RolUsuario required
+    telefono String required
+    direccion1 String required
+    ciudad String required
+    pais String required
+    latitud BigDecimal max(90) min(-90)
+    longitud BigDecimal max(180) min(-180)
+}
+
+enum RolUsuario {
+	CLIENTE, RESTAURANTE, REPARTIDOR
+}
+
+entity Carrito {
+    fecha Instant required
+    status OrdenStatus required
+    precioTotal BigDecimal required min(0)
+    metodoDePago MetodoDePago required
+    referencia String
+}
+
+enum OrdenStatus {
+    COMPLETO, PAGADO, PENDIENTE, CANCELADO, RECHAZADO
+}
+
+enum MetodoDePago {
+    EFECTIVO(efectivo), CUPON(cupon), TARJETA(tarjeta)
+}
+
+entity ItemCarrito {
+    cantidad Integer required min(0)
+    precioTotal BigDecimal required min(0)
+}
+
+relationship ManyToOne {
+    ItemCarrito{producto(nombre) required} to Producto
+    Restaurante{categoria(nombre) required} to RestauranteCategoria
+    Carrito{restaurante(nombre) required} to Restaurante
+    Producto{restaurante(nombre) required} to Restaurante
+}
+
+relationship OneToMany {
+    Usuario{carrito} to Carrito{usuario required}, 
+    Carrito{item} to ItemCarrito{carrito required}, 
+    ProductoCategoria{producto} to Producto{productoCategoria(nombre) required}
+}
+
+service * with serviceClass
+paginate Producto, ProductoCategoria, Restaurante, RestauranteCategoria with infinite-scroll
+paginate Usuario with pagination
+
+

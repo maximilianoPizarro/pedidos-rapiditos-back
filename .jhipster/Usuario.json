@@ -1,0 +1,73 @@
+{
+  "name": "Usuario",
+  "fields": [
+    {
+      "fieldName": "username",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "password",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "rol",
+      "fieldType": "RolUsuario",
+      "fieldValues": "CLIENTE,RESTAURANTE,REPARTIDOR",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "telefono",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "direccion1",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "ciudad",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "pais",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "latitud",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "90",
+      "fieldValidateRulesMin": "-90"
+    },
+    {
+      "fieldName": "longitud",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "180",
+      "fieldValidateRulesMin": "-180"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "carrito",
+      "otherEntityRelationshipName": "usuario",
+      "relationshipName": "carrito"
+    }
+  ],
+  "entityTableName": "usuario",
+  "dto": "no",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["pedidosrapiditos"],
+  "changelogDate": "20210901114851"
+}

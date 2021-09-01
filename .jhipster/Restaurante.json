@@ -1,0 +1,59 @@
+{
+  "name": "Restaurante",
+  "fields": [
+    {
+      "fieldName": "nombre",
+      "fieldType": "String",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "descripcion",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "activo",
+      "fieldType": "Boolean"
+    },
+    {
+      "fieldName": "calificacion",
+      "fieldType": "Float",
+      "fieldValidateRules": ["min", "max"],
+      "fieldValidateRulesMin": "0",
+      "fieldValidateRulesMax": "5"
+    },
+    {
+      "fieldName": "latitud",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "90",
+      "fieldValidateRulesMin": "-90"
+    },
+    {
+      "fieldName": "longitud",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "180",
+      "fieldValidateRulesMin": "-180"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "restauranteCategoria",
+      "otherEntityRelationshipName": "restaurante",
+      "relationshipValidateRules": "required",
+      "relationshipName": "categoria",
+      "otherEntityField": "nombre"
+    }
+  ],
+  "entityTableName": "restaurante",
+  "dto": "no",
+  "pagination": "infinite-scroll",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["pedidosrapiditos"],
+  "changelogDate": "20210901114551"
+}
