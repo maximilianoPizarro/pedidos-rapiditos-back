@@ -1,6 +1,6 @@
 application {
   config {
-  	applicationType monolith
+  	applicationType microservice
     baseName pedidosrapiditos
     packageName com.pedidosrapiditos.app
     authenticationType jwt
@@ -8,10 +8,6 @@ application {
     databaseType sql
     devDatabaseType h2Memory
     buildTool maven
-    clientFramework vue
-    clientTheme morph
-    clientThemeVariant dark
-    enableTranslation true
     nativeLanguage es
     languages [en]
   }

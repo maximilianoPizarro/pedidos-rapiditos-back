@@ -1,7 +1,0 @@
-export enum RolUsuario {
-  CLIENTE = 'CLIENTE',
-
-  RESTAURANTE = 'RESTAURANTE',
-
-  REPARTIDOR = 'REPARTIDOR',
-}
