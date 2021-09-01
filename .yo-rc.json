@@ -3,7 +3,6 @@
     "authenticationType": "jwt",
     "cacheProvider": "ehcache",
     "serverPort": "8081",
-    "serviceDiscoveryType": "eureka",
     "skipUserManagement": true,
     "baseName": "pedidosrapiditos",
     "buildTool": "maven",
@@ -43,6 +42,7 @@
     "withAdminUi": false,
     "creationTimestamp": 1630498874733,
     "jwtSecretKey": "YzM0NzNlYmIzYmQ5NjkxYTY4NWY3ZGNlODU5YzZiN2QyOWVjNTZiZjIzZmRmNTAwNDE2YTM5MjYxMTQ4NTZhZjViYzNiNzUwMjJmYjBkMTZkZTE2Y2Q0ZmU1MzdlODRjNjkyNjE4Y2E3N2U2MjE0ZTZhZGYxN2NiMWQ2OGE4YmI=",
-    "lastLiquibaseTimestamp": 1630499294000
+    "lastLiquibaseTimestamp": 1630499294000,
+    "serviceDiscoveryType": false
   }
 }

@@ -11,9 +11,6 @@ import org.springframework.boot.info.BuildProperties;
 import org.springframework.boot.info.GitProperties;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.interceptor.KeyGenerator;
-import org.springframework.cloud.client.ServiceInstance;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.cloud.client.serviceregistry.Registration;
 import org.springframework.context.annotation.*;
 import tech.jhipster.config.JHipsterProperties;
 import tech.jhipster.config.cache.PrefixedKeyGenerator;
@@ -46,16 +43,6 @@ public class CacheConfiguration {
     @Bean
     public JCacheManagerCustomizer cacheManagerCustomizer() {
         return cm -> {
-            createCache(cm, com.pedidosrapiditos.app.domain.Producto.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.Restaurante.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.RestauranteCategoria.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.ProductoCategoria.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.ProductoCategoria.class.getName() + ".productos");
-            createCache(cm, com.pedidosrapiditos.app.domain.Usuario.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.Usuario.class.getName() + ".carritos");
-            createCache(cm, com.pedidosrapiditos.app.domain.Carrito.class.getName());
-            createCache(cm, com.pedidosrapiditos.app.domain.Carrito.class.getName() + ".items");
-            createCache(cm, com.pedidosrapiditos.app.domain.ItemCarrito.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
