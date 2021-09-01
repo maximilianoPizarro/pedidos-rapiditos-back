@@ -1,0 +1,68 @@
+{
+  "name": "Carrito",
+  "fields": [
+    {
+      "fieldName": "fecha",
+      "fieldType": "Instant",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "status",
+      "fieldType": "OrdenStatus",
+      "fieldValues": "COMPLETO,PAGADO,PENDIENTE,CANCELADO,RECHAZADO",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "precioTotal",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": ["required", "min"],
+      "fieldValidateRulesMin": "0"
+    },
+    {
+      "fieldName": "metodoDePago",
+      "fieldType": "MetodoDePago",
+      "fieldValues": "EFECTIVO (efectivo),CUPON (cupon),TARJETA (tarjeta)",
+      "fieldValidateRules": ["required"]
+    },
+    {
+      "fieldName": "referencia",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "itemCarrito",
+      "otherEntityRelationshipName": "carrito",
+      "relationshipName": "item"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "restaurante",
+      "otherEntityRelationshipName": "carrito",
+      "relationshipValidateRules": "required",
+      "relationshipName": "restaurante",
+      "otherEntityField": "nombre"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "usuario",
+      "otherEntityRelationshipName": "carrito",
+      "relationshipValidateRules": "required",
+      "relationshipName": "usuario"
+    }
+  ],
+  "entityTableName": "carrito",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceClass",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "applications": ["pedidosrapiditos"],
+  "microserviceName": "pedidosrapiditos",
+  "clientRootFolder": "pedidosrapiditos",
+  "databaseType": "sql",
+  "changelogDate": "20210901122714"
+}
